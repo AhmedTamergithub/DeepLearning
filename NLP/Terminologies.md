@@ -79,6 +79,23 @@ Tokenization is the process of **splitting text into tokens** to make it usable 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### **🔹 What Does `adapt()` Do in Simple Terms?**  
 
 Think of `adapt()` as a way for **a preprocessing layer to learn from your data before training**. Instead of giving the model a fixed set of rules, `adapt()` **analyzes your dataset and adjusts the layer’s behavior accordingly**.  
@@ -142,7 +159,32 @@ Think of `adapt()` like a chef **tasting ingredients before cooking**—it helps
 
 
 
-Yes, **padding is often needed in NLP**, especially when working with sequences of varying lengths.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**padding is often needed in NLP**, especially when working with sequences of varying lengths.  
 
 ### **📌 Why is Padding Needed in NLP?**  
 Neural networks (especially **RNNs, LSTMs, and Transformers**) expect **fixed-length** input sequences, but text data comes in varying lengths.  
