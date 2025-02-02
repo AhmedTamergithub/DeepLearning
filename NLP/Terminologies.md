@@ -1,6 +1,6 @@
 
 
-**Entry to NLP**
+                                                                                                     **1.Entry to NLP**
 
 🟢 **Character Encoding Issues:**  
 🔹 ASCII assigns numerical values to letters but **doesn’t capture meaning**.  
