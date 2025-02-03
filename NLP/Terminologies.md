@@ -320,4 +320,86 @@ print(df.head())  # Display first few rows
 ✅ You can **load and process JSON** in Python using the `json` module.  
 ✅ **Pandas** makes it easy to work with JSON as structured data.  
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+### **What is Embedding in NLP?**  
+
+**Embedding** is a way of representing words, sentences, or documents as **numerical vectors** in a continuous space. This allows words with similar meanings to have **similar vector representations**, making it easier for machine learning models to understand language.  
+
+---
+
+## **🔹 Why Do We Need Embeddings?**  
+
+Before embeddings, words were represented using **one-hot encoding**, where each word was a unique vector with mostly zeros:  
+
+| Word   | One-Hot Encoding |
+|--------|-----------------|
+| King   | `[1, 0, 0, 0, 0]` |
+| Queen  | `[0, 1, 0, 0, 0]` |
+| Apple  | `[0, 0, 1, 0, 0]` |
+
+### **⚠ Problems with One-Hot Encoding**
+❌ **High Dimensionality** – A large vocabulary means huge, sparse vectors.  
+❌ **No Semantic Meaning** – "King" and "Queen" have no similarity in this representation.  
+
+**Embeddings solve this by mapping words to a lower-dimensional, dense vector space** where similar words are closer together.
+
+---
+
+## **🔹 Example of Word Embeddings**
+Instead of `[1, 0, 0, 0, 0]`, words are represented like:  
+
+| Word   | Embedding Vector (Simplified) |
+|--------|------------------------------|
+| King   | `[0.5, 0.2, 0.8]`            |
+| Queen  | `[0.5, 0.3, 0.8]`            |
+| Apple  | `[0.9, 0.1, 0.4]`            |
+
+📌 **Notice:** "King" and "Queen" have similar embeddings, while "Apple" is far apart.
+
+---
+
+## **🔹 Types of Embeddings**
+### **1️⃣ Word-Level Embeddings**
+- **Word2Vec** (Google) – Learns word relationships using **CBOW & Skip-gram**.  
+- **GloVe** (Stanford) – Uses word co-occurrence statistics.  
+- **FastText** (Facebook) – Works with **subwords** to handle rare words better.  
+
+### **2️⃣ Contextual Embeddings**
+- **BERT** – Understands words **in context** (e.g., "bank" in finance vs. riverbank).  
+- **GPT** – Generates text by predicting the next word.  
+- **ELMo** – Uses deep learning to capture meaning dynamically.  
+
+### **3️⃣ Sentence & Document Embeddings**
+- **Sentence-BERT (SBERT)** – Used for comparing sentence meanings.  
+- **Universal Sentence Encoder (USE)** – Converts full sentences into embeddings.  
+
+---
+
+## **🔹 Example: Word2Vec in Python**
+```python
+from gensim.models import Word2Vec
+
+# Sample sentences
+sentences = [["I", "love", "NLP"],
+             ["Word embeddings are useful"],
+             ["Deep learning improves NLP"]]
+
+# Train a Word2Vec model
+model = Word2Vec(sentences, vector_size=50, window=5, min_count=1, workers=4)
+
+# Get vector for a word
+print(model.wv["NLP"])
+
+# Find similar words
+print(model.wv.most_similar("love"))
+```
+
+---
+
+## **🔹 Key Takeaways**
+✅ **Embeddings transform words into meaningful numerical vectors.**  
+✅ **They reduce dimensionality while preserving relationships.**  
+✅ **They are essential for NLP tasks like machine translation, chatbots, and sentiment analysis.**  
+
+Would you like a **visual explanation** of embeddings? 🎨🔍
