@@ -1,4 +1,3 @@
-Here’s your message in a color-coded format for better readability:
 
 ---
 
